@@ -3,8 +3,8 @@ FROM node:14-alpine
 WORKDIR /app
 
 COPY package.json /app/package.json
-RUN npm install -g
-RUN rm /app/package.json && \
+RUN npm install && \
+    rm /app/package.json && \
     ln -s /app/node_modules/nuxt/bin/nuxt.js /bin/nuxt && \
     chown -R node:node /app
 
