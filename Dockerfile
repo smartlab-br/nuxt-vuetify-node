@@ -6,7 +6,7 @@ COPY package.json /app/package.json
 RUN npm install -g
 RUN rm /app/package.json && \
     ln -s /app/node_modules/nuxt/bin/nuxt.js /bin/nuxt && \
-    chown node:node /app
+    chown -R node:node /app
 
 ENV NUXT_HOST=0.0.0.0
 ENV NUXT_PORT=3000
